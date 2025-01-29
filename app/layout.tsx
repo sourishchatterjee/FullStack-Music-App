@@ -21,8 +21,8 @@ const geistMono = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "My Music App", // Updated title for the music app
-  description: "Stream and manage your favorite music seamlessly.", // Updated description
+  title: "My Music App", 
+  description: "Stream and manage your favorite music seamlessly.", 
 };
 
 export const revalidate =0;
@@ -47,13 +47,15 @@ const userSongs=await getSongsByUserId()
           <UserProvider>
             <ModalProvider/>
           <div className="flex min-h-screen">
-            {/* Sidebar for Navigation */}
-            <Sidebar children={undefined} songs={userSongs} />
+          
+            <Sidebar  songs={userSongs} >
+            <h1></h1>
+            </Sidebar>
             
             {/* Main Content */}
-            <main className="flex-1 p-4">
-              {children}
-            </main>
+         <main className="flex-1 p-4">
+          {children}
+          </main>
           </div>
           <Player/>
           </UserProvider>

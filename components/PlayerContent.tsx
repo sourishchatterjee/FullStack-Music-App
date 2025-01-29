@@ -373,7 +373,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
     player.setId(previousSong);
   };
 
-  const [play, { pause, sound }] = useSound(songUrl, {
+  const [play, {  sound }] = useSound(songUrl, {
     volume,
     onplay: () => setIsPlaying(true),
     onend: () => {

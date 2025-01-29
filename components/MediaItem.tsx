@@ -7,7 +7,7 @@ import Image from "next/image"
 interface MediaItemProps{
 
     data:Song;
-    onClick?:(id:string)=>void;
+    onClick?:(id:bigint)=>void;
 }
 
 const MediaItem: React.FC<MediaItemProps> =({data, onClick})=> {
@@ -16,7 +16,7 @@ const imageUrl=useLoadImage(data);
 
 const handleClick=()=>{
     if(onClick){
-        // @ts-ignore
+        
         return onClick(data.id)
     }
 

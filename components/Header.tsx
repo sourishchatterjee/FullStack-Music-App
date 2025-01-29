@@ -110,7 +110,7 @@ import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
 import useAuthModal from "@/Store/useAuthModal";
-import { SupabaseClient } from "@supabase/auth-helpers-nextjs";
+
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/Store/useUser";
 import { FaUserAlt } from "react-icons/fa";

@@ -82,22 +82,21 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
 
-import useAuthModal from "@/Store/useAuthModal";
+//import useAuthModal from "@/Store/useAuthModal";
 import { useUser } from "@/Store/useUser";
 import useUploadModal from "@/Store/useUploadModal";
-import SidebarItem from "@/components/SidebarItem";
 
 function Library() {
-  const authModal = useAuthModal();
+  //const authModal = useAuthModal();
   const uploadModal = useUploadModal();
   const { user } = useUser();
 
   const onClick = () => {
     if (!user) {
-     // return authModal.onOpen();
+     
      return uploadModal.onOpen();
     }
-    //TODO: Check for subscription
+    //toMake: Check for subscription
     return uploadModal.onOpen();
   };
 

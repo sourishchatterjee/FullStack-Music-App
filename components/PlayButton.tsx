@@ -45,7 +45,7 @@
 
 
 
-import { FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 
 const PlayButton=()=>{
     return(

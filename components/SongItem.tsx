@@ -7,7 +7,7 @@ import PlayButton from "./PlayButton";
 
 interface SongItemProps{
     data: Song;
-    onClick : (id:string)=>void
+    onClick : (id:bigint)=>void
 
 }
 
@@ -20,7 +20,7 @@ const SongItem :React.FC<SongItemProps> =({data, onClick})=>{
 
     return(
      <div
-     // @ts-ignore
+     
      onClick={()=>{onClick(data.id)}}
 
 
