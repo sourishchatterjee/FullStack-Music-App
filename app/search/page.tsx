@@ -261,44 +261,31 @@
 // export default Search;
 
 
+import getSongsByTitle from "@/actions/getSongsByTitle";
+import Header from "@/components/Header";
+import SearchInput from "@/components/SearchInput";
+import SearchContent from "@/app/search/ui/SearchContent"; 
 
-
-"use client";
-import MediaItem from "@/components/MediaItem";
-import { Song } from "@/types";
-
-interface SearchContentProps {
-  songs: Song[];
+interface SearchPageProps {
+  params: {
+    title: string;
+  };
 }
 
-const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
-  if (songs.length === 0) {
-    return (
-      <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400">
-        No Songs found.
-      </div>
-    );
-  }
+const Search = async ({ params }: SearchPageProps) => {
+  const songs = await getSongsByTitle(params.title); // Fetch songs by title from the API or database
 
   return (
-    <div className="flex flex-col gap-y-2 w-full px-6">
-      {songs.map((song) => (
-        <div key={song.id} className="flex items-center gap-x-4 w-full">
-          <div className="flex-1">
-            <MediaItem onClick={() => {}} data={song} />
-          </div>
-
-          {/* Todo: Add Like Button Here */}
-          <button
-            onClick={() => {}}
-            className="text-neutral-400 hover:text-white transition"
-          >
-            ❤️ {/* Placeholder for Like Icon */}
-          </button>
+    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+      <Header className="from-bg-neutral-900">
+        <div className="mb-2 flex flex-col gap-y-6">
+          <h1 className="text-white text-3xl font-semibold">Search</h1>
+          <SearchInput />
         </div>
-      ))}
+      </Header>
+      <SearchContent songs={songs} /> {/* Pass songs data */}
     </div>
   );
 };
 
-export default SearchContent;
+export default Search;
