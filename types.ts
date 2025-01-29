@@ -13,16 +13,28 @@ import Stripe from "stripe";
 // }
 
 
+// export interface Song {
+//     imageUrl: string | undefined;
+//     id: bigint; // Change from string to bigint
+//     user_id: string;
+//     author: string;
+//     title: string;
+//     song_path: string;
+//     image_path: string;
+//     user: string;
+    
+//   }
+
 export interface Song {
-    imageUrl: string | undefined;
-    id: bigint; // Change from string to bigint
+    id: bigint;
     user_id: string;
     author: string;
     title: string;
     song_path: string;
     image_path: string;
-    user: string;
-    
+    created_at?: string;
+    imageUrl?: string | undefined;
+    user?: string;
   }
 
 export interface UserDeatails{
