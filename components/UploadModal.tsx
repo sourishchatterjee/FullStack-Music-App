@@ -431,7 +431,8 @@ const UploadModal = () => {
       toast.success("Song successfully uploaded!");
       reset();
       uploadModal.onClose();
-    } catch (_) {
+    } catch (error) {
+      console.error("Upload error:", error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsLoading(false);
