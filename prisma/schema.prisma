@@ -338,14 +338,24 @@ model customers {
   @@schema("public")
 }
 
-/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+// /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+// model liked_songs {
+//   user_id    String       @id @db.Uuid
+//   created_at DateTime     @default(now()) @db.Timestamptz(6)
+//   song_id    BigInt?
+//   songs      songs?       @relation(fields: [song_id], references: [id], onDelete: NoAction)
+//   users      public_users @relation(fields: [user_id], references: [id], onDelete: NoAction)
+
+//   @@schema("public")
+// }
 model liked_songs {
-  user_id    String       @id @db.Uuid
+  user_id    String       @db.Uuid @unique
   created_at DateTime     @default(now()) @db.Timestamptz(6)
-  song_id    BigInt?
-  songs      songs?       @relation(fields: [song_id], references: [id], onDelete: NoAction)
+  song_id    BigInt
+  songs      songs       @relation(fields: [song_id], references: [id], onDelete: NoAction)
   users      public_users @relation(fields: [user_id], references: [id], onDelete: NoAction)
 
+  @@id([user_id, song_id])
   @@schema("public")
 }
 
@@ -503,3 +513,11 @@ enum subscription_status {
 
   @@schema("public")
 }
+
+
+
+
+//for deleting songs 
+
+
+

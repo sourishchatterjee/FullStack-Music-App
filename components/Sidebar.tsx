@@ -69,6 +69,11 @@
 
 
 
+
+
+
+
+
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -139,9 +144,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children,songs}) => {
           <div className="p-4">
             <Library songs={songs}/>
             
-           <main className="h-full flex-1 overflow-y-auto py-2">
-            {children}
-           </main>
+           
 
 
           </div>
@@ -155,3 +158,5 @@ const Sidebar: React.FC<SidebarProps> = ({ children,songs}) => {
 };
 
 export default Sidebar;
+
+

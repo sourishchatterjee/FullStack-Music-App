@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+//import Sidebar from "@/components/Sidebar";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider"
 import ModalProvider from "@/providers/ModelProvider"
 import ToasterProvider from "@/providers/ToasterProvider";
-import getSongsByUserId from "@/actions/getSongsByUserId";
+//import getSongsByUserId from "@/actions/getSongsByUserId";
 import Player from "@/components/Player";
 
 // Define custom fonts
@@ -34,7 +34,7 @@ export default async  function RootLayout({
 }>) {
 
 
-const userSongs=await getSongsByUserId()
+//const userSongs=await getSongsByUserId()
 
 
   return (
@@ -48,9 +48,9 @@ const userSongs=await getSongsByUserId()
             <ModalProvider/>
           <div className="flex min-h-screen">
           
-            <Sidebar  songs={userSongs} >
+            {/* <Sidebar  songs={userSongs} >
             <h1></h1>
-            </Sidebar>
+            </Sidebar> */}
             
             {/* Main Content */}
          <main className="flex-1 p-4">
@@ -64,3 +64,6 @@ const userSongs=await getSongsByUserId()
     </html>
   );
 }
+
+
+

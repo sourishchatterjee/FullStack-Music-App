@@ -10,3 +10,23 @@ body,
   background-color: rgb(21, 21, 52);
   color-scheme: dark;
 }
+
+
+/* Add this to your global CSS or in a <style> tag */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 2.5s steps(30) 1s forwards;
+  font-family: monospace; /* Optional for a typing feel */
+}

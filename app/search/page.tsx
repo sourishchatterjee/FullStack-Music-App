@@ -273,6 +273,7 @@ interface SearchPageProps {
     title?: string; // Make title optional since it might not always be present
   };
 }
+export const revalidate=0;
 
 const Search = async ({ searchParams }: SearchPageProps) => {
   // Add null check for title
